@@ -15,7 +15,7 @@ def info():
     import os
     import socket
     hostname= socket.gethostname()
-    env = os.getenv('FLASK_ENV', 'production')
+    env = os.getenv('FLASK_ENV', 'development')
     return (f"Version: 1.0.0, Hostname: {hostname}, Environment: {env}", 200)
 
 if __name__ == '__main__':
