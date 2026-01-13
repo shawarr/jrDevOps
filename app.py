@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 
 app = Flask(__name__)
 
@@ -16,7 +16,7 @@ def info():
     import socket
     hostname= socket.gethostname()
     env = os.getenv('FLASK_ENV', 'development')
-    return (f"Version: 1.0.0, Hostname: {hostname}, Environment: {env}", 200)
+    return jsonify({'version' : "1.0.0", 'hostname': hostname, 'env': env })
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
