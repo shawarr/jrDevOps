@@ -32,7 +32,7 @@ jobs:
         run: docker build -t jrdevops:latest .
 
       - name: Run container
-        run: docker run -d -p 5000:5000 jrDevOps:latest
+        run: docker run -d -p 5000:5000 jrdevops:latest
 
       - name: Give container time to start before curling
         run: sleep 5
