@@ -1,4 +1,5 @@
-from flask import Flask, jsonify, logging
+from flask import Flask, jsonify
+import logging
 
 app = Flask(__name__)
 if __name__ != '__main__':
