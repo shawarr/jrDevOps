@@ -23,6 +23,11 @@ def visits():
     from flask import render_template
     return render_template('visits.html')
 
+@app.route('/src/<path:filename>', methods=['GET'])
+def serve_static(filename):
+    from flask import send_from_directory
+    return send_from_directory('src', filename)
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
     
