@@ -1,0 +1,38 @@
+# create a simple HTML template for displaying visits, will add db data later
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0    " />
+    <title>Visits</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Visit Records</h1>
+    </header>
+    <main>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Date of Visit</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for visit in visits %}
+          <tr>
+            <td>{{ visit.id }}</td>
+            <td>{{ visit.visitor_name }}</td>
+            <td>{{ visit.date_of_visit }}</td>
+            <td>{{ visit.purpose }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </main>
+    <footer>
+      <p>&copy; 2026 Visit Records</p>
+    </footer>
+  </body>
+</html>

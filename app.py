@@ -18,6 +18,11 @@ def info():
     env = os.getenv('FLASK_ENV', 'development')
     return jsonify({'version' : "1.0.0", 'hostname': hostname, 'env': env })
 
+@app.route('/visits', methods=['GET'])
+def visits():
+    from flask import render_template
+    return render_template('visits.html')
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
     
